@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!-- This is will only render is the passwords did not match -->
+@if (ViewBag.error != null)
+{
+    <h2>@ViewBag.error </h2>
+
+    <form method="post" action="/user">
+        <label for="username">Username:</label>
+        <input type="text" name="username" value="@ViewBag.username" />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="@ViewBag.email" />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+        <br />
+        <label for="verify">Confirm Password:</label>
+        <input type="password" name="verify" />
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+}
+else
+{
+    <!-- This is what will render normally -->
+
+    <form method="post" action="/user">
+        <label for="username">Username:</label>
+        <input type="text" name="username" />
+        <br />
+        <label for="email">Email:</label>
+        <input type="email" name="email" />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+        <br />
+        <label for="verify">Confirm Password:</label>
+        <input type="password" name="verify" />
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <label for="credit-card">Choose a Card Type:</label>
+    <select name="credit-card">
+        <option value="visa">Visa</option>
+        <option value="mastercard">MasterCard</option>
+        <option value="amex">Aamerican Express</option>
+    </select>
+
+    <input type="checkbox" name="lettuce" value="Lettuce">
+    <label for="lettuce"> lettuce</label>
+    <br>
+    <input type="checkbox" name="onion" value="Onion">
+    <label for="onion">Onion</label>
+    <br>
+    <input type="checkbox" name="tomatoes" value="Tomatoes">
+    <label for="tomatoes">Tomatoes</label>
+    <br>
+    <input type="checkbox" name="mustard" value="Mustard">
+    <label for="mustard">Mustard</label>
+    <br>
+}
